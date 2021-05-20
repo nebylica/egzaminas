@@ -1,7 +1,10 @@
 import {useRef, useState} from 'react';
+import { useHistory } from "react-router-dom";
 import http from "../plugins/Fetch"
 
 function CreateUser() {
+
+    let history = useHistory();
     const name = useRef()
     const age = useRef()
     const email = useRef()
@@ -34,7 +37,6 @@ function CreateUser() {
         }
     }
 
-
     const createUser = () => {
         const userData = {
             name: name.current.value,
@@ -46,8 +48,21 @@ function CreateUser() {
         const validator = checkUserData(userData)
 
         if (!validator.error) {
-
-            setErrorMsg(validator.msg)
+            http.post('/createUser', userData).then(data => {
+                if(data.error) {
+                    setErrorMsg(data.msg)
+                } else {
+                    setErrorMsg(data.msg)
+                    setTimeout(() => {
+                        name.current.value = null
+                        age.current.value = null
+                        email.current.value = null
+                        password.current.value = null
+                        setErrorMsg('')
+                        history.push("/");
+                    }, 1000)
+                }
+            })
         } else {
             setErrorMsg(validator.msg)
         }

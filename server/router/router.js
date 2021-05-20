@@ -3,7 +3,7 @@ const router = express.Router()
 const middle = require('../middle/validation.js')
 const controller = require('../controlers/controller.js')
 
-// router.post('/uploadItem',middle.upload , controller.upload)
+router.post('/createUser', middle.checkUserData, controller.createUser)
 // router.get('/load', controller.load)
 
 
