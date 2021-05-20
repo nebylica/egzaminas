@@ -1,11 +1,11 @@
 import React from 'react';
 import UserCard from "../components/UserCard";
 
-function Home({users, setUsers}) {
+function Home({users, setUsers, setUpdateUser}) {
     return (
         <div className='d-flex-center'>
             <div className='usersContainer'>
-                <UserCard users={users} setUsers={setUsers}/>
+                <UserCard users={users} setUsers={setUsers} setUpdateUser={setUpdateUser}/>
             </div>
         </div>
     );
