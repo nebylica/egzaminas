@@ -83,3 +83,31 @@ body {
   color: #ffffff;
 }
 
+/*Home*/
+
+.usersContainer {
+  margin: 100px;
+  width: 500px;
+}
+
+.userCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.userCard:hover {
+  background-color: #B9A3CD;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.icon:hover {
+  font-size: 21px;
+  color: white;
+}

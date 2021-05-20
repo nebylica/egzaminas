@@ -2,7 +2,7 @@ import {useRef, useState} from 'react';
 import { useHistory } from "react-router-dom";
 import http from "../plugins/Fetch"
 
-function CreateUser() {
+function CreateUser({setUsers}) {
 
     let history = useHistory();
     const name = useRef()
@@ -53,6 +53,7 @@ function CreateUser() {
                     setErrorMsg(data.msg)
                 } else {
                     setErrorMsg(data.msg)
+                    setUsers(data.users)
                     setTimeout(() => {
                         name.current.value = null
                         age.current.value = null

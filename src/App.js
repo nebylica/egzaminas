@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -6,18 +7,29 @@ import {
 import Home from "./pages/Home";
 import CreateUser from "./pages/CreateUser";
 import Navbar from "./components/Navbar";
+import http from "./plugins/Fetch"
+
 
 function App() {
+
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        http.get('/getAllUsers').then(data => {
+            setUsers(data.users)
+        })
+    }, [])
+
     return (
         <Router>
             <Navbar />
             <div className='d-flex-center'>
                 <Switch>
                     <Route exact path='/'>
-                        <Home />
+                        <Home users={users} setUsers={setUsers}/>
                     </Route>
                     <Route path='/createUser'>
-                        <CreateUser />
+                        <CreateUser setUsers={setUsers} />
                     </Route>
                 </Switch>
             </div>
