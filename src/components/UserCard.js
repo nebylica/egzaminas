@@ -18,7 +18,6 @@ function UserCard({users, setUsers, setUpdateUser}) {
         history.push('/updateUser')
     }
 
-
     return (
         <>
             {users.map((user, i) => (

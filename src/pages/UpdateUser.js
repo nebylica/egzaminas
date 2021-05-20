@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useState} from 'react';
 import http from "../plugins/Fetch";
 import {useHistory} from "react-router-dom";
 
@@ -39,8 +39,6 @@ function UpdateUser({updateUser, setUsers}) {
             }
         })
     }
-
-
 
     return (
         <div className='inputsForm d-flex-center column'>

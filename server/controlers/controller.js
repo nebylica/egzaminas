@@ -23,13 +23,14 @@ module.exports = {
         await item.save()
 
         const users = await getAll()
-
         res.send({error: false, msg: 'Vartotojas sėkmingai sukurtas!', users})
     },
 
     deleteUser: async (req, res) => {
         const {id} = req.params
+
         await userDb.findOneAndDelete({_id: id})
+
         const users = await getAll()
         res.send({users})
     },

@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <div className='navbar'>
             <Link style={{color: oneColor}} to='/'>Visi vartotojai</Link>
-            <Link style={{color: twoColor}} to='/createUser'>Sukurti vartotoją</Link>
+            <Link style={{color: twoColor}} to='/createUser'>Sukurti naują vartotoją</Link>
         </div>
     );
 }
