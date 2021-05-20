@@ -1,6 +1,10 @@
 import {useRef, useState} from 'react';
+import http from "../plugins/Fetch";
+import {useHistory} from "react-router-dom";
 
-function UpdateUser({updateUser}) {
+function UpdateUser({updateUser, setUsers}) {
+
+    let history = useHistory();
 
     const [name, setName] = useState(updateUser.name)
     const [age, setAge] = useState(updateUser.age)
@@ -12,13 +16,28 @@ function UpdateUser({updateUser}) {
     function updateUserData() {
         const userData = {
             name,
-            age,
+            age: Number(age),
             email,
             password,
             id: updateUser._id
         }
 
-        console.log(userData)
+        http.post('/updateUser', userData).then(data => {
+            if(data.error) {
+                setErrorMsg(data.msg)
+            } else {
+                setErrorMsg(data.msg)
+                setUsers(data.users)
+                setTimeout(() => {
+                    setName('')
+                    setAge('')
+                    setEmail('')
+                    setPassword('')
+                    setErrorMsg('')
+                    history.push("/");
+                }, 500)
+            }
+        })
     }
 
 

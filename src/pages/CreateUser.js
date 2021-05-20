@@ -61,7 +61,7 @@ function CreateUser({setUsers}) {
                         password.current.value = null
                         setErrorMsg('')
                         history.push("/");
-                    }, 1000)
+                    }, 500)
                 }
             })
         } else {

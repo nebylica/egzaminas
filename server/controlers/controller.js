@@ -29,9 +29,19 @@ module.exports = {
 
     deleteUser: async (req, res) => {
         const {id} = req.params
-        console.log(id)
         await userDb.findOneAndDelete({_id: id})
         const users = await getAll()
         res.send({users})
     },
+
+    updateUser: async (req, res) => {
+        const {name, age, email, password, id} = req.body
+
+        await userDb.findOneAndUpdate(
+            {_id: id},
+            {$set: {name: name, age: age, email: email, password: password}})
+
+        const users = await getAll()
+        res.send({error: false, msg: 'Vartotojas sėkmingai atnaujintas!', users})
+    }
 }

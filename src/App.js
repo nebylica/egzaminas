@@ -34,7 +34,7 @@ function App() {
                         <CreateUser setUsers={setUsers} />
                     </Route>
                     <Route path='/updateUser'>
-                        <UpdateUser updateUser={updateUser}/>
+                        <UpdateUser updateUser={updateUser} setUsers={setUsers}/>
                     </Route>
                 </Switch>
             </div>
