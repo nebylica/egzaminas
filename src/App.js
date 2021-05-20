@@ -11,14 +11,16 @@ function App() {
     return (
         <Router>
             <Navbar />
-            <Switch>
-                <Route exact path='/'>
-                    <Home />
-                </Route>
-                <Route path='/createUser'>
-                    <CreateUser />
-                </Route>
-            </Switch>
+            <div className='d-flex-center'>
+                <Switch>
+                    <Route exact path='/'>
+                        <Home />
+                    </Route>
+                    <Route path='/createUser'>
+                        <CreateUser />
+                    </Route>
+                </Switch>
+            </div>
         </Router>
     );
 }

@@ -1,3 +1,5 @@
+/*Other*/
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,10 +9,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/*Navbar*/
+
 .navbar {
   width: 100vw;
   height: 60px;
-  background-color: rgb(187, 165, 207);
+  background-color: #B9A3CD;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -27,3 +41,45 @@ body {
 .navbar a:hover{
   color: #ffffff;
 }
+
+/*CreateUser*/
+
+.inputsForm {
+  margin: 100px;
+  padding: 30px;
+  width: 250px;
+  height: auto;
+  border: 2px solid #B9A3CD;
+  border-radius: 20px;
+  background-color: #e2e2e2;
+  text-align: center;
+}
+
+.inputsForm input {
+  width: 200px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.inputsForm button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #B9A3CD;
+  transition: 0.3s ease;
+}
+
+.inputsForm button:hover {
+  background-color: #B9A3CD;
+  color: #ffffff;
+}
+
