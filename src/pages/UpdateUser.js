@@ -35,7 +35,7 @@ function UpdateUser({updateUser, setUsers}) {
                     setPassword('')
                     setErrorMsg('')
                     history.push("/");
-                }, 500)
+                }, 700)
             }
         })
     }
@@ -49,7 +49,7 @@ function UpdateUser({updateUser, setUsers}) {
             <input type="email" placeholder="El. paštas" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Slaptažodis" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <small style={{color: "darkred"}}>{errorMsg}</small>
-            <button type='submit' onClick={updateUserData}>SUKURTI NAUJĄ VARTOTOJĄ</button>
+            <button type='submit' onClick={updateUserData}>ATNAUJINTI VARTOTOJĄ</button>
         </div>
     );
 }
